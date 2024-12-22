@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ShyamSolution - Tech Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .button-container {
+            margin-top: 2rem;
+        }
+        .large-btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .large-btn:hover {
+            background-color: #004d40;
+        }
+
+        /* About Section */
+        #about {
+            padding: 2rem;
+            background: #fff;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+        #about p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 2rem;
+            background: #eeeeee;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2.5rem;
+        }
+        #contact p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+        }
+        .scroll-top-btn:hover {
+            background-color: #004d40;
+        }
+
+        @media (max-width: 600px) {
+  nav ul {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">ShyamSolution</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to ShyamSolution</h1>
+
+
+        <!-- Adding 5 Large Buttons -->
+        <div class="button-container">
+            <button class="large-btn" onclick="showAlert('Maths')">Maths</button>
+            <button class="large-btn" onclick="window.location.href='science.html'">Science</button>
+            <button class="large-btn" onclick="showAlert('SST')">SST</button>
+            <button class="large-btn" onclick="showAlert('English')">English</button>
+            <button class="large-btn" onclick="showAlert('Hindi')">Hindi</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>This website is designed for students who are unable to attend classes. They can use it to access notes and answers to help them with their studies.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Follow me on instragram <a href="https://www.instagram.com/">shykumar</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ShyamSolution. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Alert Function
+        function showAlert(subject) {
+            alert(`You clicked on ${subject} button!`);
+        }
+
+        // Scroll to Top Button
+        window.onscroll = function() { toggleScrollTopBtn() };
+
+        function toggleScrollTopBtn() {
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
